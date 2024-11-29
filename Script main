@@ -1,0 +1,40 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Omegausjsjsa/Orion-multi-dropdown-/refs/heads/main/Workd%2Cm')))()
+
+local Window = OrionLib:MakeWindow({
+    Name = "Dress to Impress Etherbyte Hub",
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "OrionTest",
+    IntroText = "ez"
+})
+
+local Tab = Window:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+Tab:AddButton({
+    Name = "Teleport to VIP SEC",
+    Callback = function()
+        local player = game.Players.LocalPlayer
+        if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+            player.Character.HumanoidRootPart.CFrame = CFrame.new(-227.208191, -3.24550438, 42.2374496, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+        end
+    end
+})
+
+Tab:AddButton({
+    Name = "Teleport to Normal SEC",
+    Callback = function()
+        local player = game.Players.LocalPlayer
+        if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+            player.Character.HumanoidRootPart.CFrame = CFrame.new(-290.650421, -3.92707872, 33.4821548, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+        end
+    end
+})
+
+Tab:AddLabel"list of things you can wear in vip sec"
+Tab:AddLabel("if u dont have vip ofc")
+Tab:AddLabel("laptop, cape ,fur jacket with belt and sword ")
+Tab:AddLabel("ik its limited but it is what it is...")
