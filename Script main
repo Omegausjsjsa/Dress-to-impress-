@@ -1,7 +1,7 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Omegausjsjsa/Orion-multi-dropdown-/refs/heads/main/Workd%2Cm')))()
 
 local Window = OrionLib:MakeWindow({
-    Name = "Dress to Impress Etherbyte Hub",
+    Name = "Etherbyte Hub",
     HidePremium = false,
     SaveConfig = true,
     ConfigFolder = "OrionTest",
@@ -14,6 +14,7 @@ local Tab = Window:MakeTab({
     PremiumOnly = false
 })
 
+-- Teleport to VIP Section
 Tab:AddButton({
     Name = "Teleport to VIP SEC",
     Callback = function()
@@ -24,6 +25,7 @@ Tab:AddButton({
     end
 })
 
+-- Teleport to Normal Section
 Tab:AddButton({
     Name = "Teleport to Normal SEC",
     Callback = function()
@@ -34,7 +36,25 @@ Tab:AddButton({
     end
 })
 
-Tab:AddLabel"list of things you can wear in vip sec"
-Tab:AddLabel("if u dont have vip ofc")
-Tab:AddLabel("laptop, cape ,fur jacket with belt and sword ")
-Tab:AddLabel("ik its limited but it is what it is...")
+-- Information about VIP items
+Tab:AddLabel("List of things you can wear in VIP SEC")
+Tab:AddLabel("If you don't have VIP of course")
+Tab:AddLabel("Laptop, cape, fur jacket with belt and sword")
+Tab:AddLabel("I know it's limited, but it is what it is...")
+
+-- Speed Adjustment Slider
+Tab:AddSlider({
+    Name = "Adjust Speed",
+    Min = 16, -- Default Roblox walk speed
+    Max = 100, -- Maximum desired speed
+    Default = 16, -- Default value
+    Color = Color3.fromRGB(255, 255, 255),
+    Increment = 1, -- Change in value per step
+    ValueName = "Speed",
+    Callback = function(Value)
+        local player = game.Players.LocalPlayer
+        if player and player.Character and player.Character:FindFirstChild("Humanoid") then
+            player.Character.Humanoid.WalkSpeed = Value
+        end
+    end
+})
